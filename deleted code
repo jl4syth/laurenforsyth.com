@@ -1,0 +1,36 @@
+<div class="form">
+  <input type="text" name="name" value="name">
+  <input type="text" name="email" value="email">
+  <textarea id="comment-box" rows="4" cols="36" name="Message" placeholder="Please leave your message here" wrap="soft"></textarea>
+  <input type="button" value="Send">
+</div>
+
+input[type=text] {
+  box-sizing: border-box;
+  width: 85%;
+  color: #2a423a;
+  font-style: italic;
+  padding: 1em;
+}
+
+#comment-box {
+  box-sizing: border-box;
+  width: 85%;
+  font-style: italic;
+  padding: 1em;
+  color: #2a423a;
+}
+
+input[type=button] {
+  width: 85%;
+  padding: 20px 0;
+  margin-top: 20px;
+  background-color: #1c7991;
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 1.125em;
+  color: #e2e3ed;
+  border: none;
+  text-align: center;
+  text-transform: uppercase;
+}

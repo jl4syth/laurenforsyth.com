@@ -1,0 +1,972 @@
+/*! HTML5 Boilerplate v6.1.0 | MIT License | https://html5boilerplate.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* General Styles */
+
+html {
+	font-size: 16px;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  font-size: 1em;
+  font-family: 'Open Sans', sans-serif;
+  color: #e2e3ed;
+  text-align: left;
+  overflow-x: hidden;
+  position:relative;
+}
+
+aside {
+  font-size: 1em;
+  color: #373737;
+  text-align: left;
+  font-family: 'Roboto Slab', serif;
+}
+
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #e2e3ed;
+  text-decoration: none;
+}
+
+h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 1.875em;
+  margin: 0;
+}
+
+h3,
+h4 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 1.125em;
+  margin: 20px 0;
+}
+
+h5 {
+  font-size: 1.375em;
+}
+
+p {
+  font-size: .875em;
+  line-height: 1.285;
+}
+
+img {
+  width: 100%;
+}
+
+figure {
+  margin: 0;
+}
+
+address {
+ font-style: normal;
+}
+
+.spacer {
+  width: 400px;
+  margin-left: 400px;
+  display: inline-block;
+}
+
+span {
+  border-right: .05em solid;
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.content-wrapper {
+  width: 90%;
+  margin: 50px 0;
+}
+
+/* -------------------- Base Header - Footer Styles -------------------- */
+
+header,
+footer {
+  background-color: #033845;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+header {
+  padding: 15px 0;
+}
+
+header .content-wrapper {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+header figure {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+header nav {
+  width: 30%;
+  font-size: 1.125em;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+header nav ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+footer {
+  text-align: center;
+  flex-direction: column;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* -------------------- Mobile Styles - Homepage -------------------- */
+/* Navigation Area*/
+
+.nav-links {
+  position: absolute;
+  right: -5px;
+  height: 72vh;
+  top: 8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #033845;
+  width: 40%;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in;
+}
+
+.nav-links li {
+  opacity: 0;
+  list-style: none;
+  font-size: 1.125em;
+  font-family: 'Roboto Slab', serif;
+}
+
+.burger {
+  display: block;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: #e2e3ed;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-active {
+  transform: translateX(0%);
+}
+
+/* -------------------- Nav Bar Animations -------------------- */
+
+@keyframes navLinkFade{
+  from{
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+  to{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px,6px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px,-6px);
+}
+
+/* Hero Area */
+
+.hero-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  background: url('../img/comp.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 500px;
+  padding: 0;
+}
+
+.hero-area h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  font-size: 2.25em;
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  line-height: 1.2;
+  padding-bottom: 90px;
+}
+
+/* Skills-Aside */
+
+.skills-accord .content-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.skills-accord {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 0px 0px 0px;
+}
+
+.skills-accord figure {
+  width: 25%;
+}
+
+.skill-description p {
+  font-size: 1em;
+}
+
+.collapsible {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;
+  background-color: #fff;
+  color: #444;
+  cursor: pointer;
+  width: 80%;
+  outline: none;
+  font-size: 1.75em;
+  margin: -10px 0px 0px 0px;
+  padding: 20px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  border-top: 2px solid #000;
+  border-right: 2px solid #000;
+  border-left: 2px solid #000;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+
+.active, .collapsible:hover {
+  background-color: #fff;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+
+.button-content {
+  padding: 18px;
+  overflow: hidden;
+  background-color: #fff;
+  border-bottom: 2px solid #000;
+  border-right: 2px solid #000;
+  border-left: 2px solid #000;
+  width: 67%;
+  text-align: center;
+  display: none;
+
+}
+
+.skills-no-accord {
+  display: none;
+}
+
+/* Work Area */
+
+.features {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  background: url('../img/light2-2.png') center no-repeat;
+  background-size: cover;
+}
+
+.features h2 {
+  margin-bottom: 60px;
+}
+
+.features article {
+  width: 63%;
+  margin: 30px 0;
+}
+
+.features .features-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+.features i {
+  font-size: 12em;
+  margin-bottom: 55px;
+}
+
+.features p {
+  text-align: center;
+  margin: 0;
+}
+
+/* About Area */
+
+.about-me {
+  background-color: #ffffff;
+  color: #373737;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.about-me h2 {
+  margin-bottom: 40px;
+  line-height: 1;
+}
+
+.about-me h3 {
+  width: 55%;
+  margin: 20px 0;
+}
+
+/* Footer Area */
+
+footer .content-wrapper {
+  width: 80%;
+  margin: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+footer .info-description p {
+  margin-bottom: 40px;
+}
+
+footer .info {
+  border: 2px solid #fff;
+  border-radius: 12px;
+  padding: 0 25px 0 25px;
+}
+
+footer .copyright {
+  margin: 0 0 20px 0;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+  /* 1 */
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+  white-space: inherit;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width:768px) {
+  /*Tablet styles here*/
+
+  /* General styles */
+  .content-wrapper {
+    max-width: 640px;
+    margin: 100px 0;
+  }
+
+  h2 {
+    font-size: 2.25em;
+    line-height: 1.333;
+  }
+
+  h3 {
+    font-size: 1.5em;
+    line-height: 1.25;
+  }
+
+  /* Header */
+  header {
+    justify-content: space-around;
+    padding: 33px 0;
+  }
+
+  header .content-wrapper {
+    width: 90%;
+    justify-content: space-between;
+  }
+
+  header figure {
+    width: 50%;
+  }
+
+  header nav {
+    width: 20%;
+  }
+
+  header nav ul {
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    top: 6vh;
+    height: 52vh;
+    padding: 5vh;
+    width: 20%;
+  }
+
+  .nav-links li {
+    font-size: 2em;
+  }
+
+  .burger div {
+    width: 50px;
+    height: 5px;
+    margin: 10px;
+}
+
+.toggle .line1 {
+transform: rotate(-45deg) translate(-15px,6px);
+
+}
+
+.toggle .line2 {
+opacity: 0;
+}
+
+.toggle .line3 {
+transform: rotate(45deg) translate(-15px,-6px);
+
+}
+  /* Hero Area */
+  .hero-area {
+    min-height: 600px;
+  }
+
+  .hero-area h1 {
+    font-size: 3em;
+    line-height: 1;
+}
+
+ /* Skills Area */
+
+.skills-accord {
+  display: none;
+}
+
+.skills-no-accord .content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  border: 3px #000000 solid;
+  padding: 20px 5px 20px 5px;
+  border-radius: 15px;
+  margin: 40px 0 40px 0;
+  background: linear-gradient(#000, #000) no-repeat center/2px 100%;
+  background-color: #ffffff;
+  height: 325px;
+}
+
+.skills-no-accord {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  width: 100%;
+}
+
+.skills-no-accord .skill-headers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  margin: 0;
+}
+
+.skills-no-accord figure {
+  width: 20%;
+}
+
+.des-skill-header,
+.dev-skill-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 49%;
+  margin: 0;
+}
+
+.skills-no-accord .skill-content {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  margin: 0;
+  width: 100%;
+}
+
+.skills-no-accord .skill-content .tools {
+  padding: 20px 0 0 0;
+}
+
+.skill-divider {
+  height: 230px;
+  width: 1px;
+  background-color: #000000;
+  margin: 40px 0 0 0;
+}
+
+.skills-no-accord article {
+  justify-content: center;
+  align-items: center;
+  flex-basis: 24%;
+  text-align: center;
+  margin: 20px 0 0 0;
+}
+
+  /* Features */
+
+  .features h2 {
+    margin-bottom: 20px;
+    font-size: 2.17em;
+  }
+
+  .features article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    flex-basis: 50%;
+  }
+
+  .features .features-item-description {
+    width: 90%;
+  }
+
+  .features img {
+    margin-bottom: 30px;
+  }
+
+  /* Reviews */
+  .about-me article {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .about-me h2 {
+    width: 80%;
+  }
+  .about-me article figure,
+  .about-me article div {
+    width: 49%;
+  }
+
+  .about-me h3 {
+    width: 75%;
+    margin: 0;
+}
+  /* Footer */
+
+
+@media only screen and (min-width: 1200px) {
+/* Desktop Styles */
+
+/* General Styles */
+.content-wrapper {
+  max-width: 1200px;
+}
+
+h2 {
+  font-size: 2.25em;
+}
+
+h3,
+h4 {
+  font-size: 1.875em;
+}
+
+h5 {
+  font-size: 1.375em;
+}
+
+p {
+  font-size: 1.125em;
+  line-height: 1.333;
+}
+
+/* Header */
+header {
+  padding: 15px 0;
+  min-height: 65px;
+}
+
+header .content-wrapper {
+  justify-content: space-between;
+}
+
+header figure {
+  width: 30%;
+}
+
+.burger {
+  display: none;
+}
+
+.nav-links li {
+  opacity: 1;
+  font-size: 1em;
+}
+
+.nav-links {
+position: absolute;
+transform: none;
+transition: none;
+justify-content: space-around;
+flex-flow: row wrap;
+height: auto;
+width: 45%;
+padding: 0;
+margin: 15px 45px 0px 0px;
+}
+
+/* Hero Area*/
+
+.hero-area {
+  padding: 0 0 60px 200px;
+}
+.hero-area h1 {
+  width: 80%;
+  font-size: 3.75em;
+}
+
+.skill-content p {
+    font-size: 1.375em;
+    margin: 0;
+    padding: 0;
+  }
+
+.skills-no-accord .content-wrapper {
+  width: 68%;
+  height: 400px;
+  max-width: 850px;
+}
+
+.skills-no-accord article  {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-flow: row wrap;
+  width: 100%;
+}
+
+.skill-divider {
+  height: 283px;
+  width: 1px;
+  background-color: #000000;
+  margin: 0 0 0 0;
+}
+
+/* Features */
+
+.features h2 {
+  width: 90%;
+}
+
+.features article {
+  flex-basis: 33%;
+}
+
+/* Reviews */
+
+.about-me h2 {
+  padding-bottom: 50px;
+}
+
+.about-me article div {
+  width: 42%;
+}
+
+/* Footer */
+
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+  pre {
+    white-space: pre-wrap !important;
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  /*
+     * Printing Tables:
+     * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
