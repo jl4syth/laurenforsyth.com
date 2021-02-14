@@ -476,36 +476,44 @@ footer .content-wrapper {
   margin: 20px;
 }
 
+footer h3 {
+  font-size: 2em;
+  padding: 0;
+  margin: 10px;
+}
+
+footer p {
+  font-size: 1em;
+  margin: 0;
+}
+
 footer .contact {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  flex-flow: row wrap;
+  flex-flow: column;
+}
+
+footer h4 {
+  font-size: 1.5em;
   margin: 40px;
-}
-
-footer .info-description p {
-   margin: 0;
-}
-
-footer .info {
-
+  padding: 0;
 }
 
 footer .social-icons {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-flow: row wrap;
 }
 
 .social i {
   font-size: 3em;
-  padding: 20px;
 }
 
 footer .copyright {
-  margin: 80px 0 5px 0;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 /* ==========================================================================
@@ -730,13 +738,14 @@ transform: rotate(45deg) translate(-15px,-6px);
 .skills-no-accord .skill-content {
   display: flex;
   justify-content: space-around;
+  align-items: flex-start;
   flex-flow: row wrap;
   margin: 0;
   width: 100%;
 }
 
 .skills-no-accord .skill-content .tools {
-  padding: 20px 0 0 0;
+  padding:;
 }
 
 .skill-divider {
@@ -917,6 +926,19 @@ margin: 15px 45px 0px 0px;
 }
 
 /* Footer */
+
+footer .contact {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: row wrap;
+  margin-top: 20px;
+}
+
+footer .social {
+  margin-top
+}
+
 
 
 /* ==========================================================================
